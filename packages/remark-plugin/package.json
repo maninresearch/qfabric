@@ -1,6 +1,6 @@
 {
   "name": "@qfabric/remark-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Remark plugin that transforms :::component directive blocks into QFabric <qf-*> web component tags.",
   "license": "Apache-2.0",
   "author": "Hasarindu Perera",
