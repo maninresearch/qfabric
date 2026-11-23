@@ -27,7 +27,7 @@
     "gen:assets": "pnpm --filter qfabric build && node scripts/gen-readme-assets.mjs",
     "changeset": "changeset",
     "version-packages": "changeset version && biome format --write . && pnpm install --lockfile-only",
-    "release": "pnpm build && changeset publish"
+    "release": "pnpm build && pnpm publish -r --access public --no-git-checks && changeset tag"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",
