@@ -1,6 +1,6 @@
 {
   "name": "@qfabric/astro",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Astro integration and theme for building quantum education sites with QFabric.",
   "license": "Apache-2.0",
   "author": "Hasarindu Perera",
