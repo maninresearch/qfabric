@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@qfabric/astro/layouts/BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description} theme="light">
+  <article style="max-width: 720px; margin: 0 auto; padding: 48px 24px;">
+    <slot />
+  </article>
+</BaseLayout>

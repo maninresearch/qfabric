@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "QFabric: interactive quantum visuals for the web"
+message: "If you use QFabric in your research or teaching, please cite it."
+type: software
+authors:
+  - family-names: Perera
+    given-names: Hasarindu
+repository-code: "https://github.com/maninresearch/qfabric"
+abstract: >-
+  QFabric is a declarative quantum visualization engine for the web: a set of
+  framework-agnostic web components for showing quantum states, built on a
+  tested state-vector math engine, with a markdown authoring layer and an Astro
+  integration for building interactive quantum education sites.
+keywords:
+  - quantum computing
+  - visualization
+  - education
+  - web components
+  - quantum information
+license: Apache-2.0

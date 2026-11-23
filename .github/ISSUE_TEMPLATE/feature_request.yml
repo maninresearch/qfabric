@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest a component, an option, or an improvement.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: Check the roadmap in the README first. Open-ended ideas are welcome in Discussions.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you are trying to teach or build
+      description: The lesson, page or use case this would help with.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: How it could work, including the markdown directive you would like to write.
+    validations:
+      required: true

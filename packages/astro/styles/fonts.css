@@ -1,0 +1,9 @@
+/*
+ * Self-hosted QFabric fonts, all under the SIL Open Font License 1.1:
+ * Instrument Sans (interface and prose), STIX Two Text (math) and
+ * JetBrains Mono (code). The files ship with this package, so pages make no
+ * third-party font requests.
+ */
+@import "@fontsource-variable/instrument-sans";
+@import "@fontsource-variable/stix-two-text";
+@import "@fontsource-variable/jetbrains-mono";

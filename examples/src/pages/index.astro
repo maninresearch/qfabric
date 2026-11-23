@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@qfabric/astro/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="QFabric examples" description="Interactive quantum visuals, authored in markdown." theme="light">
+  <main style="max-width: 720px; margin: 0 auto; padding: 48px 24px;">
+    <h1>QFabric examples</h1>
+    <p>
+      These pages are built from plain markdown with <code>:::</code> directives:
+      no JavaScript written by the author. Open
+      <a href="/lessons/superposition">the superposition lesson</a> to see the
+      components in action.
+    </p>
+
+    <h2>Live state vector</h2>
+    <qf-state-vector state="|+⟩" show-label></qf-state-vector>
+
+    <h2>Probabilities</h2>
+    <qf-probability state="|+⟩" show-label></qf-probability>
+  </main>
+
+  <script>
+    import 'qfabric/state-vector';
+    import 'qfabric/probability';
+  </script>
+</BaseLayout>

@@ -1,0 +1,58 @@
+{
+  "name": "@qfabric/astro",
+  "version": "0.0.0",
+  "description": "Astro integration and theme for building quantum education sites with QFabric.",
+  "license": "Apache-2.0",
+  "author": "Hasarindu Perera",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maninresearch/qfabric.git",
+    "directory": "packages/astro"
+  },
+  "homepage": "https://github.com/maninresearch/qfabric/tree/main/packages/astro#readme",
+  "bugs": {
+    "url": "https://github.com/maninresearch/qfabric/issues"
+  },
+  "keywords": ["quantum", "astro", "astro-integration", "withastro", "education"],
+  "type": "module",
+  "files": ["dist", "src", "layouts", "styles", "!src/**/*.test.ts"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./layouts/*": "./layouts/*",
+    "./styles/*": "./styles/*"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint:package": "publint --strict && attw --pack . --profile esm-only"
+  },
+  "dependencies": {
+    "@fontsource-variable/instrument-sans": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/stix-two-text": "^5.3.0",
+    "@qfabric/remark-plugin": "workspace:^",
+    "qfabric": "workspace:^"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0 || ^6.0.0 || ^7.0.0",
+    "@astrojs/markdown-remark": "^7.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/markdown-remark": "7.3.6",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.9"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "peerDependenciesMeta": {
+    "@astrojs/markdown-remark": {
+      "optional": true
+    }
+  }
+}

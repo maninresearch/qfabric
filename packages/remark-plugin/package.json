@@ -1,0 +1,53 @@
+{
+  "name": "@qfabric/remark-plugin",
+  "version": "0.0.0",
+  "description": "Remark plugin that transforms :::component directive blocks into QFabric <qf-*> web component tags.",
+  "license": "Apache-2.0",
+  "author": "Hasarindu Perera",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maninresearch/qfabric.git",
+    "directory": "packages/remark-plugin"
+  },
+  "homepage": "https://github.com/maninresearch/qfabric/tree/main/packages/remark-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/maninresearch/qfabric/issues"
+  },
+  "keywords": ["quantum", "remark", "remark-plugin", "markdown", "unified", "education"],
+  "type": "module",
+  "files": ["dist", "src", "!src/**/*.test.ts"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint:package": "publint --strict && attw --pack . --profile esm-only"
+  },
+  "dependencies": {
+    "@types/mdast": "^4.0.4",
+    "js-yaml": "^4.1.0",
+    "mdast-util-from-markdown": "^2.0.2",
+    "micromark-util-character": "^2.1.0",
+    "micromark-util-types": "^2.0.1",
+    "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/unist": "^3.0.3",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "typescript": "^5.6.3",
+    "unist-util-visit": "^5.0.0",
+    "vitest": "^2.1.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="QFabric">
+  <path d="M6 6L42 42M6 22L26 42M22 6L42 26" stroke="#00D9F5" stroke-width="2" stroke-linecap="round" stroke-opacity="0.9"></path>
+  <path d="M6 42L42 6M6 26L26 6M22 42L42 22" stroke="#9B6DFF" stroke-width="2" stroke-linecap="round" stroke-opacity="0.9"></path>
+  <circle cx="16" cy="16" r="2.2" fill="#9B6DFF"></circle>
+  <circle cx="32" cy="16" r="2.2" fill="#9B6DFF"></circle>
+  <circle cx="16" cy="32" r="2.2" fill="#9B6DFF"></circle>
+  <circle cx="32" cy="32" r="2.2" fill="#9B6DFF"></circle>
+  <circle cx="24" cy="24" r="3.4" fill="#00D9F5"></circle>
+</svg>

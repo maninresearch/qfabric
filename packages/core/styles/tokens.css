@@ -1,0 +1,342 @@
+/*
+ * QFabric design tokens: colour, type, spacing and motion.
+ *
+ * This is the document-level stylesheet. Load it once per page (the
+ * @qfabric/astro integration injects it automatically). Shadow-DOM components
+ * read these custom properties through inheritance and always ship fallback
+ * values, e.g. var(--qf-accent, #1f4e9c), so they still render without it.
+ *
+ * Themes: light is the default. Dark applies with `data-theme="dark"` on an
+ * ancestor, or when the OS prefers dark and no `data-theme="light"` is set.
+ *
+ * Fonts: this file loads no fonts and makes no network requests. The Astro
+ * integration self-hosts Instrument Sans, STIX Two Text and JetBrains Mono;
+ * without them every stack falls back to system fonts.
+ */
+
+/* Tokens (light theme, the default) */
+:root {
+  /* Surfaces */
+  --qf-paper: #fcfcfd; /* page background */
+  --qf-surface: #ffffff; /* figures, panels */
+  --qf-sunken: #f3f4f6; /* code blocks */
+  --qf-line: #e2e5ea; /* hairlines, borders */
+  --qf-line-strong: #c9ced6;
+
+  /* Text */
+  --qf-ink: #16181d;
+  --qf-ink-muted: #5c6370;
+  --qf-ink-faint: #8a909b; /* decorative labels only, not body text */
+
+  /* Accent: amplitudes, links, focus */
+  --qf-accent: #1f4e9c;
+  --qf-accent-hover: #173d7c;
+  --qf-accent-soft: #e8eef8;
+
+  /* Meaning */
+  --qf-measure: #9a6212; /* measurement and collapse */
+  --qf-warning: #a15c00;
+  --qf-error: #b3261e;
+  --qf-success: #2e7d4f;
+
+  /* Brand: the logo mark only, never UI */
+  --qf-brand-cyan: #00d9f5;
+  --qf-brand-violet: #9b6dff;
+
+  /* Typography */
+  --qf-font-sans: "Instrument Sans Variable", "Instrument Sans", system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --qf-font-math: "STIX Two Text Variable", "STIX Two Text", "Cambria Math", "Times New Roman",
+    serif;
+  --qf-font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo,
+    Consolas, monospace;
+
+  --qf-text-xs: 12px;
+  --qf-text-sm: 13px;
+  --qf-text-base: 15px;
+  --qf-text-md: 17px;
+  --qf-text-lg: 20px;
+  --qf-text-xl: 24px;
+  --qf-text-2xl: 30px;
+  --qf-text-3xl: 38px;
+
+  --qf-leading-tight: 1.2;
+  --qf-leading-snug: 1.35;
+  --qf-leading-normal: 1.5;
+  --qf-leading-relaxed: 1.65;
+
+  --qf-tracking-tight: -0.025em;
+  --qf-tracking-snug: -0.015em;
+  --qf-tracking-caps: 0.06em;
+
+  --qf-weight-regular: 400;
+  --qf-weight-medium: 500;
+  --qf-weight-semibold: 600;
+  --qf-weight-bold: 700;
+
+  /* Spacing */
+  --qf-space-1: 4px;
+  --qf-space-2: 8px;
+  --qf-space-3: 12px;
+  --qf-space-4: 16px;
+  --qf-space-6: 24px;
+  --qf-space-8: 32px;
+  --qf-space-12: 48px;
+  --qf-space-16: 64px;
+  --qf-space-24: 96px;
+
+  /* Shape */
+  --qf-radius-sm: 4px; /* controls, inline code */
+  --qf-radius: 6px; /* figures, code blocks */
+  --qf-radius-full: 9999px;
+  --qf-focus-ring: 2px solid var(--qf-accent);
+
+  /* Motion */
+  --qf-ease: cubic-bezier(0.2, 0, 0, 1);
+  --qf-duration-fast: 100ms;
+  --qf-duration: 150ms;
+  --qf-duration-slow: 250ms;
+
+  /* Layout */
+  --qf-layout-max: 1200px;
+  --qf-content-max: 720px;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --qf-paper: #101216;
+    --qf-surface: #15181d;
+    --qf-sunken: #0c0e11;
+    --qf-line: #2a2f37;
+    --qf-line-strong: #3a404a;
+    --qf-ink: #e7e9ed;
+    --qf-ink-muted: #9ba1ac;
+    --qf-ink-faint: #6f7580;
+    --qf-accent: #8fb0f0;
+    --qf-accent-hover: #aec6f5;
+    --qf-accent-soft: #1b2433;
+    --qf-measure: #e1a855;
+    --qf-warning: #e9b064;
+    --qf-error: #f08a80;
+    --qf-success: #6fcf97;
+    color-scheme: dark;
+  }
+}
+
+[data-theme="dark"] {
+  --qf-paper: #101216;
+  --qf-surface: #15181d;
+  --qf-sunken: #0c0e11;
+  --qf-line: #2a2f37;
+  --qf-line-strong: #3a404a;
+  --qf-ink: #e7e9ed;
+  --qf-ink-muted: #9ba1ac;
+  --qf-ink-faint: #6f7580;
+  --qf-accent: #8fb0f0;
+  --qf-accent-hover: #aec6f5;
+  --qf-accent-soft: #1b2433;
+  --qf-measure: #e1a855;
+  --qf-warning: #e9b064;
+  --qf-error: #f08a80;
+  --qf-success: #6fcf97;
+  color-scheme: dark;
+}
+
+/* Restates the light values so a light section nested in a dark page works. */
+[data-theme="light"] {
+  --qf-paper: #fcfcfd;
+  --qf-surface: #ffffff;
+  --qf-sunken: #f3f4f6;
+  --qf-line: #e2e5ea;
+  --qf-line-strong: #c9ced6;
+  --qf-ink: #16181d;
+  --qf-ink-muted: #5c6370;
+  --qf-ink-faint: #8a909b;
+  --qf-accent: #1f4e9c;
+  --qf-accent-hover: #173d7c;
+  --qf-accent-soft: #e8eef8;
+  --qf-measure: #9a6212;
+  --qf-warning: #a15c00;
+  --qf-error: #b3261e;
+  --qf-success: #2e7d4f;
+  color-scheme: light;
+}
+
+/* Element styles */
+body {
+  font-family: var(--qf-font-sans);
+  font-size: var(--qf-text-base);
+  line-height: var(--qf-leading-relaxed);
+  color: var(--qf-ink);
+  background-color: var(--qf-paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--qf-font-sans);
+  color: var(--qf-ink);
+  line-height: var(--qf-leading-tight);
+  letter-spacing: var(--qf-tracking-snug);
+  text-wrap: balance;
+}
+h1 {
+  font-size: var(--qf-text-3xl);
+  font-weight: var(--qf-weight-bold);
+  letter-spacing: var(--qf-tracking-tight);
+}
+h2 {
+  font-size: var(--qf-text-2xl);
+  font-weight: var(--qf-weight-semibold);
+}
+h3 {
+  font-size: var(--qf-text-xl);
+  font-weight: var(--qf-weight-semibold);
+  line-height: var(--qf-leading-snug);
+}
+h4 {
+  font-size: var(--qf-text-lg);
+  font-weight: var(--qf-weight-semibold);
+  line-height: var(--qf-leading-snug);
+}
+h5,
+h6 {
+  font-size: var(--qf-text-md);
+  font-weight: var(--qf-weight-semibold);
+  line-height: var(--qf-leading-snug);
+  color: var(--qf-ink);
+}
+
+p {
+  line-height: var(--qf-leading-relaxed);
+  color: var(--qf-ink);
+}
+
+a {
+  color: var(--qf-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+}
+a:hover {
+  color: var(--qf-accent-hover);
+  text-decoration-color: currentColor;
+}
+
+:focus-visible {
+  outline: var(--qf-focus-ring);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--qf-accent-soft);
+}
+
+code,
+kbd,
+samp {
+  font-family: var(--qf-font-mono);
+  font-variant-ligatures: none; /* keep kets like "|-⟩" literal */
+  font-size: 0.875em;
+  background: var(--qf-sunken);
+  color: var(--qf-ink);
+  padding: 1px 5px;
+  border-radius: var(--qf-radius-sm);
+}
+
+pre {
+  font-family: var(--qf-font-mono);
+  font-variant-ligatures: none;
+  font-size: var(--qf-text-sm);
+  line-height: var(--qf-leading-relaxed);
+  background: var(--qf-sunken);
+  color: var(--qf-ink);
+  padding: var(--qf-space-4) var(--qf-space-6);
+  border-radius: var(--qf-radius);
+  border: 1px solid var(--qf-line);
+  overflow-x: auto;
+}
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+blockquote {
+  margin-inline: 0;
+  padding-left: var(--qf-space-4);
+  border-left: 2px solid var(--qf-line-strong);
+  color: var(--qf-ink-muted);
+}
+
+strong {
+  font-weight: var(--qf-weight-semibold);
+}
+small {
+  font-size: var(--qf-text-xs);
+  color: var(--qf-ink-muted);
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--qf-line);
+}
+
+/* Utility classes */
+.qf-text-accent {
+  color: var(--qf-accent);
+}
+.qf-text-measure {
+  color: var(--qf-measure);
+}
+.qf-text-error {
+  color: var(--qf-error);
+}
+.qf-text-muted {
+  color: var(--qf-ink-muted);
+}
+
+.qf-font-math {
+  font-family: var(--qf-font-math);
+}
+.qf-font-mono {
+  font-family: var(--qf-font-mono);
+}
+
+.qf-label {
+  font-size: var(--qf-text-xs);
+  font-weight: var(--qf-weight-semibold);
+  letter-spacing: var(--qf-tracking-caps);
+  text-transform: uppercase;
+  color: var(--qf-ink-muted);
+}
+
+/* Layout directives: :::row and :::grid */
+.qf-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--qf-space-4);
+  align-items: stretch;
+  margin: var(--qf-space-6) 0;
+}
+.qf-row > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.qf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--qf-space-4);
+  margin: var(--qf-space-6) 0;
+}
+
+@media (max-width: 640px) {
+  .qf-row {
+    flex-direction: column;
+  }
+}

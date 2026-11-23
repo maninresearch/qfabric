@@ -1,0 +1,36 @@
+name: Bug report
+description: Something renders wrong, a calculation is off, or a build fails.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: The smallest markdown, HTML or code that shows the problem.
+      render: markdown
+    validations:
+      required: true
+  - type: input
+    id: packages
+    attributes:
+      label: Package versions
+      placeholder: "qfabric 0.1.0, @qfabric/astro 0.1.0, astro 5.x"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and OS
+      placeholder: Firefox 140 on macOS 16
+  - type: textarea
+    id: physics
+    attributes:
+      label: Physics check (for wrong results)
+      description: If a state, amplitude or probability is wrong, what is the correct value, and where does it come from?

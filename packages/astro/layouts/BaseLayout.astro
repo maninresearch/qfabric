@@ -1,0 +1,31 @@
+---
+/**
+ * BaseLayout: design-system CSS, theme attribute and document shell.
+ * Minimal shell for site owners who build their own UI.
+ */
+import 'qfabric/styles/tokens.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  /** dark | light | auto, written to <html data-theme>. */
+  theme?: 'dark' | 'light' | 'auto';
+}
+
+const { title = 'QFabric', description = '', theme = 'light' } = Astro.props;
+const htmlTheme = theme === 'auto' ? undefined : theme;
+---
+
+<!doctype html>
+<html lang="en" data-theme={htmlTheme}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <slot />
+    <!-- Components self-hydrate when their scripts load; no Astro client:* needed. -->
+  </body>
+</html>

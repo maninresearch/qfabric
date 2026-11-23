@@ -1,0 +1,68 @@
+{
+  "name": "qfabric",
+  "version": "0.0.0",
+  "description": "Framework-agnostic web components and a quantum math engine for showing quantum states on the web.",
+  "license": "Apache-2.0",
+  "author": "Hasarindu Perera",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maninresearch/qfabric.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/maninresearch/qfabric/tree/main/packages/core#readme",
+  "bugs": {
+    "url": "https://github.com/maninresearch/qfabric/issues"
+  },
+  "keywords": [
+    "quantum",
+    "quantum-computing",
+    "qubit",
+    "state-vector",
+    "visualization",
+    "web-components",
+    "lit",
+    "education"
+  ],
+  "type": "module",
+  "sideEffects": ["./dist/index.js", "./dist/components/**"],
+  "files": ["dist", "src", "assets", "styles", "!src/**/*.test.ts"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./math": {
+      "types": "./dist/math/index.d.ts",
+      "default": "./dist/math/index.js"
+    },
+    "./state-vector": {
+      "types": "./dist/components/state-vector/index.d.ts",
+      "default": "./dist/components/state-vector/index.js"
+    },
+    "./probability": {
+      "types": "./dist/components/probability/index.d.ts",
+      "default": "./dist/components/probability/index.js"
+    },
+    "./styles/tokens.css": "./styles/tokens.css",
+    "./assets/*": "./assets/*"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint:package": "publint --strict && attw --pack . --profile esm-only --exclude-entrypoints ./styles/tokens.css"
+  },
+  "dependencies": {
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
