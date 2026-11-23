@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@astrojs/markdown-remark": "7.3.6",
-    "typescript": "^5.6.3",
+    "typescript": "^7.0.2",
     "vitest": "^2.1.9"
   },
   "publishConfig": {
