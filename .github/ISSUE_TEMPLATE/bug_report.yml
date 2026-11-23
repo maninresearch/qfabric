@@ -21,7 +21,7 @@ body:
     id: packages
     attributes:
       label: Package versions
-      placeholder: "qfabric 0.1.0, @qfabric/astro 0.1.0, astro 5.x"
+      placeholder: "@qfabric/core 0.1.0, @qfabric/astro 0.1.0, astro 5.x"
     validations:
       required: true
   - type: input

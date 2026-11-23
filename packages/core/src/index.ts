@@ -1,9 +1,9 @@
 /**
- * qfabric: QFabric web components and quantum math engine.
+ * @qfabric/core: QFabric web components and quantum math engine.
  *
  * Importing this convenience entry registers all shipped components. For
  * tree-shakeable builds import a specific component instead, e.g.
- * `import 'qfabric/state-vector'`.
+ * `import '@qfabric/core/state-vector'`.
  */
 
 // Side-effectful registration of every shipped component.

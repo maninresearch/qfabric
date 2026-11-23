@@ -1,4 +1,4 @@
-# qfabric
+# @qfabric/core
 
 ## 0.1.0
 
@@ -6,7 +6,7 @@
 
 - 52d8580: First public release.
 
-  - `qfabric`: a quantum state-vector math engine (`qfabric/math`) with
+  - `@qfabric/core`: a quantum state-vector math engine (`@qfabric/core/math`) with
     single-, two- and three-qubit gates, parameterized rotations, circuit parsing,
     measurement and symbolic amplitude formatting; the `<qf-state-vector>` and
     `<qf-probability>` web components; and light and dark design tokens.

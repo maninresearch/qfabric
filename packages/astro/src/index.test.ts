@@ -28,9 +28,9 @@ describe('qfabric() integration', () => {
   it('injects tokens, fonts and the component runtime by default', async () => {
     const { scripts } = await runSetup();
     expect(scripts).toEqual([
-      ['page-ssr', `import 'qfabric/styles/tokens.css';`],
+      ['page-ssr', `import '@qfabric/core/styles/tokens.css';`],
       ['page-ssr', `import '@qfabric/astro/styles/fonts.css';`],
-      ['page', `import 'qfabric';`],
+      ['page', `import '@qfabric/core';`],
     ]);
   });
 
@@ -43,7 +43,7 @@ describe('qfabric() integration', () => {
 
   it('still loads the components when componentLoading is "auto"', async () => {
     const { scripts } = await runSetup({ componentLoading: 'auto' });
-    expect(scripts).toContainEqual(['page', `import 'qfabric';`]);
+    expect(scripts).toContainEqual(['page', `import '@qfabric/core';`]);
   });
 });
 
@@ -95,15 +95,15 @@ describe('component map', () => {
     JSON.parse(readFileSync(new URL('../../core/package.json', import.meta.url), 'utf8')).exports,
   );
 
-  it('points every tag at a real qfabric export', () => {
+  it('points every tag at a real @qfabric/core export', () => {
     for (const spec of Object.values(COMPONENT_IMPORTS)) {
-      expect(coreExports).toContain(spec.replace(/^qfabric/, '.'));
+      expect(coreExports).toContain(spec.replace(/^@qfabric\/core/, '.'));
     }
   });
 
   it('resolves used tags to unique imports and ignores unknown tags', () => {
     expect(importsForTags(['qf-probability', 'qf-probability', 'qf-unknown'])).toEqual([
-      'qfabric/probability',
+      '@qfabric/core/probability',
     ]);
   });
 });

@@ -60,12 +60,12 @@ The components render like this:
   </picture>
 </p>
 
-<p align="center"><sub>Generated from <code>qfabric</code> with <code>pnpm gen:assets</code>. The amplitudes, probabilities and bar heights are the engine's real output for <code>|+⟩</code>.</sub></p>
+<p align="center"><sub>Generated from <code>@qfabric/core</code> with <code>pnpm gen:assets</code>. The amplitudes, probabilities and bar heights are the engine's real output for <code>|+⟩</code>.</sub></p>
 
 ## Usage
 
 ```bash
-npm install qfabric
+npm install @qfabric/core
 ```
 
 For an Astro site, see [`@qfabric/astro`](./packages/astro).
@@ -73,8 +73,8 @@ For an Astro site, see [`@qfabric/astro`](./packages/astro).
 ### Components in any page
 
 ```js
-import 'qfabric/state-vector';
-import 'qfabric/probability';
+import '@qfabric/core/state-vector';
+import '@qfabric/core/probability';
 ```
 
 ```html
@@ -85,7 +85,7 @@ import 'qfabric/probability';
 ### The math engine on its own
 
 ```js
-import { runCircuit, parseCircuit, measure } from 'qfabric/math';
+import { runCircuit, parseCircuit, measure } from '@qfabric/core/math';
 
 const bell = runCircuit(2, parseCircuit(['H 0', 'CNOT 0 1']));
 bell.probabilities();      // Float64Array [0.5, 0, 0, 0.5]
@@ -109,7 +109,7 @@ Open the superposition lesson to see the components live. The example lives in
 
 | Package | Description |
 | --- | --- |
-| [`qfabric`](./packages/core) | Web components (Lit 3), the quantum math engine, design tokens. |
+| [`@qfabric/core`](./packages/core) | Web components (Lit 3), the quantum math engine, design tokens. |
 | [`@qfabric/remark-plugin`](./packages/remark-plugin) | Markdown integration: turns `:::component` blocks into `<qf-*>` tags. |
 | [`@qfabric/astro`](./packages/astro) | Astro integration: registers the plugin, loads tokens, self-hosted fonts and components. |
 

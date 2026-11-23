@@ -1,5 +1,13 @@
 # @qfabric/astro
 
+## 0.1.1
+
+### Patch Changes
+
+- Depend on `@qfabric/core`, the published name of the core package. Version
+  0.1.0 depended on `qfabric`, which npm does not allow as a package name, so it
+  could not be installed.
+
 ## 0.1.0
 
 ### Minor Changes

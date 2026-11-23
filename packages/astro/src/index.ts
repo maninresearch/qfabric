@@ -60,12 +60,12 @@ export default function qfabric(options: QFabricAstroOptions = {}): AstroIntegra
         );
 
         // Load the design tokens and, unless disabled, the self-hosted fonts.
-        injectScript('page-ssr', `import 'qfabric/styles/tokens.css';`);
+        injectScript('page-ssr', `import '@qfabric/core/styles/tokens.css';`);
         if (loadFonts) injectScript('page-ssr', `import '@qfabric/astro/styles/fonts.css';`);
 
         // Load the component runtime. Per-page loading (`auto`) isn't implemented,
         // so every mode loads all components.
-        injectScript('page', `import 'qfabric';`);
+        injectScript('page', `import '@qfabric/core';`);
       },
     },
   };

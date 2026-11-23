@@ -41,12 +41,12 @@ importers:
       '@qfabric/astro':
         specifier: workspace:*
         version: link:../packages/astro
+      '@qfabric/core':
+        specifier: workspace:*
+        version: link:../packages/core
       astro:
         specifier: ^7.4.7
         version: 7.4.7(@astrojs/markdown-remark@7.3.6)(@types/node@22.20.5)(esbuild@0.27.7)(yaml@2.9.1)
-      qfabric:
-        specifier: workspace:*
-        version: link:../packages/core
 
   packages/astro:
     dependencies:
@@ -59,15 +59,15 @@ importers:
       '@fontsource-variable/stix-two-text':
         specifier: ^5.3.0
         version: 5.3.0
+      '@qfabric/core':
+        specifier: workspace:^
+        version: link:../core
       '@qfabric/remark-plugin':
         specifier: workspace:^
         version: link:../remark-plugin
       astro:
         specifier: ^5.0.0 || ^6.0.0 || ^7.0.0
         version: 7.4.7(@astrojs/markdown-remark@7.3.6)(@types/node@22.20.5)(esbuild@0.27.7)(yaml@2.9.1)
-      qfabric:
-        specifier: workspace:^
-        version: link:../core
     devDependencies:
       '@astrojs/markdown-remark':
         specifier: 7.3.6

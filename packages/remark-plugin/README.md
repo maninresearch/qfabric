@@ -46,7 +46,7 @@ format: decimal
 …and get `<qf-state-vector state="|+⟩" format="decimal"></qf-state-vector>`.
 
 The plugin maps any `:::name` block to a `<qf-name>` tag; the components
-themselves come from `qfabric`. `:::row` and `:::grid` lay out the component
+themselves come from `@qfabric/core`. `:::row` and `:::grid` lay out the component
 blocks directly after them side by side. The group ends at the first line of
 ordinary markdown.
 

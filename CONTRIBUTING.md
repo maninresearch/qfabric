@@ -17,7 +17,7 @@ be easy too. This guide gets you from clone to pull request.
 
 ```
 packages/
-  core/           qfabric: web components and quantum math engine
+  core/           @qfabric/core: web components and quantum math engine
   remark-plugin/  @qfabric/remark-plugin: turns :::directive blocks into <qf-*> tags
   astro/          @qfabric/astro: Astro integration
 examples/         sample Astro site exercising the components

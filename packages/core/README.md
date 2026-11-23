@@ -1,4 +1,4 @@
-# qfabric
+# @qfabric/core
 
 The QFabric engine: framework-agnostic web components (Lit 3 and Shadow DOM) and
 a quantum state-vector math engine.
@@ -8,7 +8,7 @@ a quantum state-vector math engine.
 ## Install
 
 ```bash
-npm install qfabric
+npm install @qfabric/core
 ```
 
 ## Components
@@ -16,8 +16,8 @@ npm install qfabric
 Import only the components you use:
 
 ```js
-import 'qfabric/state-vector';
-import 'qfabric/probability';
+import '@qfabric/core/state-vector';
+import '@qfabric/core/probability';
 ```
 
 ```html
@@ -28,7 +28,7 @@ import 'qfabric/probability';
 Or register everything at once:
 
 ```js
-import 'qfabric';
+import '@qfabric/core';
 ```
 
 | Element | Shows | Useful attributes |
@@ -43,7 +43,7 @@ import 'qfabric';
 The math engine has no DOM dependencies and is exported on its own:
 
 ```js
-import { runCircuit, parseCircuit, measure } from 'qfabric/math';
+import { runCircuit, parseCircuit, measure } from '@qfabric/core/math';
 
 const bell = runCircuit(2, parseCircuit(['H 0', 'CNOT 0 1']));
 bell.probabilities(); // Float64Array [0.5, 0, 0, 0.5]
@@ -57,7 +57,7 @@ so they render without any stylesheet. For the full design (page typography,
 light and dark themes) load the tokens once at the document level:
 
 ```js
-import 'qfabric/styles/tokens.css';
+import '@qfabric/core/styles/tokens.css';
 ```
 
 Light is the default. Set `data-theme="dark"` on `<html>` (or any ancestor) for

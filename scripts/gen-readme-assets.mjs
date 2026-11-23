@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * Generates the README preview images from the real qfabric math engine,
+ * Generates the README preview images from the real @qfabric/core math engine,
  * so the picture in the docs can never drift from what the components compute.
  *
  * The amplitude strings, probabilities, bar heights and basis labels below all
- * come from `qfabric/math`; only the figure chrome is layout. It writes a
+ * come from `@qfabric/core/math`; only the figure chrome is layout. It writes a
  * light and a dark variant for GitHub's `<picture>` theme switching. Run after
  * building core:
  *
- *   pnpm --filter qfabric build && node scripts/gen-readme-assets.mjs
+ *   pnpm --filter @qfabric/core build && node scripts/gen-readme-assets.mjs
  *   (or: pnpm gen:assets)
  */
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -188,5 +188,5 @@ for (const [name, theme] of Object.entries(THEMES)) {
     name === 'light' ? 'example-preview.svg' : 'example-preview-dark.svg',
   );
   writeFileSync(file, buildSvg('|+⟩', theme).replace(/[ \t]+$/gm, ''));
-  console.log(`Wrote ${file} from qfabric math engine output.`);
+  console.log(`Wrote ${file} from @qfabric/core math engine output.`);
 }

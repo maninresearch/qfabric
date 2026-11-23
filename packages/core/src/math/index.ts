@@ -1,5 +1,5 @@
 /**
- * qfabric/math: the quantum math engine.
+ * @qfabric/core/math: the quantum math engine.
  *
  * Public, framework-agnostic API for plugin authors and advanced users.
  * Imports nothing from the DOM/rendering layer.

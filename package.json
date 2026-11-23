@@ -24,7 +24,7 @@
     "check:packages": "pnpm -r --filter \"./packages/*\" run lint:package",
     "smoke": "pnpm --filter @qfabric/examples build && node scripts/smoke-test.mjs",
     "verify": "pnpm lint && pnpm build && pnpm typecheck && pnpm test:coverage && pnpm check:packages && pnpm smoke",
-    "gen:assets": "pnpm --filter qfabric build && node scripts/gen-readme-assets.mjs",
+    "gen:assets": "pnpm --filter @qfabric/core build && node scripts/gen-readme-assets.mjs",
     "changeset": "changeset",
     "version-packages": "changeset version && biome format --write . && pnpm install --lockfile-only",
     "release": "pnpm build && pnpm publish -r --access public --no-git-checks && changeset tag"

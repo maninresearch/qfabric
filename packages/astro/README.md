@@ -11,7 +11,7 @@ so a folder of markdown lessons becomes an interactive site.
 Works with Astro 5, 6 and 7.
 
 ```bash
-npm install qfabric @qfabric/astro
+npm install @qfabric/core @qfabric/astro
 ```
 
 On Astro 7, also install the remark-based Markdown processor. Astro 7 no longer
